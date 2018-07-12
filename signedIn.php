@@ -19,6 +19,7 @@
             <a href="index.php"><h1 class="col-lg-4">Logout</h1></a>
         </nav>
         <main>
+            <?php 
             <?php // Create connection
             include "databaseconnect.php";
 

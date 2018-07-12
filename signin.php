@@ -3,7 +3,7 @@
 include "databaseconnect.php";
 
 session_start(); // Starting Session
-$error=''; // Variable To Store Error Message
+$errors =[]; // Variable To Store Error Message
 if (isset($_POST['submit'])) {
     if (empty($_POST['email']) || empty($_POST['password'])) {
         $error = "Email or Password is invalid";

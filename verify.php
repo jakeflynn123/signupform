@@ -1,7 +1,7 @@
 <?php
 
 include "databaseconnect.php";
-
+session_start();
 $response = $_POST["g-recaptcha-response"];
 $url = 'https://www.google.com/recaptcha/api/siteverify';
 $data = array(
@@ -27,6 +27,9 @@ if ($captcha_success->success==false) {
     $emailAddress = $_POST["email"];
     $dob = $_POST["dob"];
     $password = $_POST["password"];
+    $password = md5($password);
     mysqli_query($conn, "INSERT INTO `users`(`firstname`, `lastname`, `email`, `dob`, `password`, `timestamp`) VALUES ('".$firstName."', '".$lastName."', '".$emailAddress."', '".$dob."', '".$password."', CURRENT_TIMESTAMP)");
+    $_SESSION['email'] = $emailAddress;
+    $_SESSION['success'] = "You are logged in";
     header("Location: http://www.thebestwebsite.com/signedIn.php");
 }

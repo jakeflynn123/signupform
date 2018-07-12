@@ -21,6 +21,14 @@
             <section class="container">
                 <div class="row">
                     <form action="signin.php" method="post" class="form-signin col-lg-6">
+                    <!-- <?php include("signin.php"); ?>
+                        <?php if (count($errors) > 0) : ?>
+                        <div>
+                            <?php foreach ($errors as $error) : ?>
+                                <p><?php echo $error; ?></p>
+                                <?php endforeach ?>
+                            </div>
+                        <?php endif ?> -->
                         <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
                         <label for="inputEmail" class="sr-only">Email address</label>
                         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
@@ -31,17 +39,10 @@
                             <input type="checkbox" value="remember-me"> Remember me
                           </label>
                         </div>
-                        <input name="submit" type="submit" value=" Login ">
+                        <input name="sigin" type="submit" value=" Login ">
                         <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
                     </form>
                     <form method="post" action="verify.php" class="form-signin col-lg-6">
-                        <?php 
-                        if (count($errors) > 0) {
-                            foreach ($errors as $error) {
-                                echo $error;
-                            }
-                        }
-                        ?>
                         <h1 class="h3 mb-3 font-weight-normal">Register</h1>
                         <label for="inputFirstName" class="sr-only">First Name</label>
                         <input name="firstname" type="text" id="inputFirstName" class="form-control" placeholder="First Name" required autofocus>
