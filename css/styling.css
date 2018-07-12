@@ -1,0 +1,16 @@
+input {
+	margin-bottom: 10px; 
+}
+nav {
+	margin-bottom: 100px;
+	background-color: rgb(0, 123, 255)
+}
+h1 {
+	color: white;
+}
+main > .container > .row {
+	border-right: 2px soild black; 
+}
+table, tbody, th, td {
+	border-width: 2px;
+}
